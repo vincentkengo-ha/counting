@@ -3,6 +3,7 @@ import { View, TextInput, StyleSheet, Keyboard} from "react-native";
 
 
 import { CommonStyles } from "../styles/CommonStyles";
+import { CountableRow } from "./CountableRow";
 import { CountButton } from "./CountButton";
 
 export const AddRow = ({ addNewCountable }) => {

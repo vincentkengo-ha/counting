@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { CommonStyles } from "../styles/CommonStyles";
 import { CountButton } from "./CountButton";
+import { RemoveButton } from "./RemoveButton";
 
 export const CountableRow = ({ countable, changeCounts, index }) => (
   <View style={CommonStyles.row}>
@@ -23,6 +24,14 @@ export const CountableRow = ({ countable, changeCounts, index }) => (
         }}
       />
     </View>
+    <View style={styles.removeButton}>
+      <RemoveButton
+        text="Remove"
+        submit={() => {
+          
+        }}
+      />
+    </View>
   </View>
 );
 
@@ -34,4 +43,7 @@ const styles = StyleSheet.create({
   buttonColumn: {
     flex: 0.2,
   },
+  removeButton: {
+    alignItems: "flex-end"
+  }
 });

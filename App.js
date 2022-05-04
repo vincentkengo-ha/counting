@@ -5,6 +5,7 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   View,
+  Text,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -45,6 +46,9 @@ export default function App() {
     >
       <SafeAreaView style={styles.container}>
         <ScrollView>
+          {!countables.length ? (
+            <Text style={styles.textStyle}>No items yet, add something!</Text>
+          ) : null}
           {countables
             .sort((a, b) => (a.name > b.name ? 1 : -1))
             .map((countable, index) => (
@@ -69,5 +73,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "flex-end",
+  },
+  textStyle: {
+    flex: 1,
+    fontSize: 20, 
+    textAlign: "center",
+    textAlignVertical: "center",
   },
 });
