@@ -45,14 +45,16 @@ export default function App() {
     >
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          {countables.map((countable, index) => (
-            <CountableRow
-              countable={countable}
-              key={countable.name}
-              changeCounts={changeCounts}
-              index={index}
-            />
-          ))}
+          {countables
+            .sort((a, b) => (a.name > b.name ? 1 : -1))
+            .map((countable, index) => (
+              <CountableRow
+                countable={countable}
+                key={countable.name}
+                changeCounts={changeCounts}
+                index={index}
+              />
+            ))}
           <View style={{ flex: 1 }} />
         </ScrollView>
         <AddRow addNewCountable={addNewCountable} />
